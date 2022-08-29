@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroganow jsTask2</title>
+</head>
+
+<body>
+    <h1>Домашнее задание №2 (Строганов Алексей)</h1>
+    <hr>
+    <h2>Задание №2.1</h2>
+    <p>Почему код даёт именно такие результаты?</p>
+    <p>var a = 1, b = 1, c, d;<br>
+        c = ++a; alert(c); //1 + 1 = 2 Префиксная форма инкремента возвращает результат сложения.<br>
+        d = b++; alert(d); //1 Постфиксная форма инкремента возвращает значение до увеличения, но сохраняет после себя
+        сумму b=b+1=1+1=2.<br>
+        c = (2 + ++a); alert(c); //2 + 2 + 1 = 5 Префиксная форма инкремента с данными a записанными при вычислении
+        с.<br>
+        d = (2 + b++); alert(d); //2 + 2 = 4 Постфиксная форма инкремента с данными b записанными после вычислении d, но
+        сохраняет после себя сумму b=b+1=2+1=3<br>
+        alert(a); // 3 Результат а из строки с вычисления c.<br>
+        alert(b); // 3 Результат b из строки с вычисления d.<br>
+    </p>
+    <hr>
+    <h2>Задание №2.2</h2>
+    <p>Чему будет равен x в примере ниже?</p>
+    <p>var a = 2;<br>
+        var x = 1 + (a *= 2); // x = 1 + (2*2) = 5
+    </p>
+    <hr>
+    <h2>Задание №2.3</h2>
+    <p>Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать
+        скрипт, который работает по следующему принципу:</p>
+    <ul>
+        <li>если a и b положительные, вывести их разность;</li>
+        <li>если а и b отрицательные, вывести их произведение;</li>
+        <li>если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.</li>
+    </ul>
+    <script>
+        function task3() {
+            let a = +prompt('Введите первое значение');
+            let b = +prompt('Введите первое значение');
+            if (a > 0 && b > 0) {
+                alert(a - b);
+            }
+            else if (a < 0 && b < 0) {
+                alert(a * b);
+            }
+            else {
+                alert(a + b);
+            }
+        }
+    </script>
+    <a href="#" onclick="task3();">Проверить решение задания №2.3</a>
+    <hr>
+    <h2>Задание №2.2</h2>
+    <p>Чему будет равен x в примере ниже?</p>
+    <p>var a = 2;<br>
+        var x = 1 + (a *= 2); // x = 1 + (2*2) = 5
+    </p>
+    <hr>
+    <h2>Задание №2.4</h2>
+    <p>Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до
+        15.</p>
+    <script>
+        function task4() {
+            let a = +prompt('Введите значение от 0 до 15'),
+                row = '';
+
+            switch (a) {
+                case 0: row += (a++) + ' ';
+                case 1: row += (a++) + ' ';
+                case 2: row += (a++) + ' ';
+                case 3: row += (a++) + ' ';
+                case 4: row += (a++) + ' ';
+                case 5: row += (a++) + ' ';
+                case 6: row += (a++) + ' ';
+                case 7: row += (a++) + ' ';
+                case 8: row += (a++) + ' ';
+                case 9: row += (a++) + ' ';
+                case 10: row += (a++) + ' ';
+                case 11: row += (a++) + ' ';
+                case 12: row += (a++) + ' ';
+                case 13: row += (a++) + ' ';
+                case 14: row += (a++) + ' ';
+                case 15: row += (a++) + ' ';
+            }
+            alert(row);
+        }
+    </script>
+    <a href="#" onclick="task4();">Проверить решение задания №2.4</a>
+    <hr>
+    <h2>Задание №2.5</h2>
+    <p>Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать
+        оператор return.</p>
+    <script>
+        function task5() {
+            let arg1 = +prompt('Введите значение arg1');
+            let arg2 = +prompt('Введите значение arg2');
+
+            function operationSum(arg1, arg2) {
+                return arg1 + arg1;
+            }
+
+            function operationSubtraction(arg1, arg2) {
+                return arg1 - arg2;
+            }
+
+            function operationMultiplication(arg1, arg2) {
+                return arg1 * arg2;
+            }
+
+            function operationDivision(arg1, arg2) {
+                return arg1 / arg2;
+            }
+
+            alert('Сумма: ' + operationSum(arg1, arg2) +
+                '\nВычитание: ' + operationSubtraction(arg1, arg2) +
+                '\nПроизведение: ' + operationMultiplication(arg1, arg2) +
+                '\nДеление: ' + operationDivision(arg1, arg2));
+
+        }
+    </script>
+    <a href="#" onclick="task5();">Проверить решение задания №2.5</a>
+    <hr>
+    <h2>Задание №2.6</h2>
+    <p>Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения
+        аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить
+        одну из арифметических операций (использовать функции из пункта 5) и вернуть полученное значение (использовать
+        switch).</p>
+    <script>
+        function task6() {
+            let arg1 = +prompt('Введите значение arg1');
+            let arg2 = +prompt('Введите значение arg2');
+            let operation = prompt('Введите операцию: "+" для сложения, "-" для вычетания , "*" для произведния, "/" для деления');
+
+            function operationSum(arg1, arg2) {
+                return arg1 + arg1;
+            }
+            function operationSubtraction(arg1, arg2) {
+                return arg1 - arg2;
+            }
+
+            function operationMultiplication(arg1, arg2) {
+                return arg1 * arg2;
+            }
+
+            function operationDivision(arg1, arg2) {
+                return arg1 / arg2;
+            }
+
+            function mathOperation(arg1, arg2, operation) {
+                switch (operation) {
+                    case ('+'):
+                        return operationSum(arg1, arg2);
+                    case ('-'):
+                        return operationSubtraction(arg1, arg2);
+                    case ('*'):
+                        return operationMultiplication(arg1, arg2);
+                    case ('/'):
+                        return operationDivision(arg1, arg2);
+                    default:
+                        return "Неправильно введена арифметическая операция!";
+                }
+            }
+            alert(mathOperation(arg1, arg2, operation));
+
+        }
+    </script>
+    <a href="#" onclick="task6();">Проверить решение задания №2.6</a>
+    <hr>
+    <h2>Задание №2.8</h2>
+    <p>*С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val –
+        заданное число, pow – степень.</p>
+    <script>
+        function task8() {
+            let val = +prompt('Введите число');
+            let pow = +prompt('Введите степень');
+
+            function power(val, pow) {
+                if (pow == 0)
+                    return 1;
+                else
+                    return val * power(val, pow - 1);
+            }
+            alert('Число ' + val + ' в степени ' + pow + ' = ' + power(val, pow));
+        }
+    </script>
+    <a href="#" onclick="task8();">Проверить решение задания №2.8</a>
+    <hr>
+
+
+</body>
+
+</html>
