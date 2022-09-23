@@ -1,0 +1,15 @@
+.cart-list,
+.catalog,
+.cart-btn {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+}
+
+.good {
+    margin: 0 auto;
+    width: 500px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    background: #FFCC00;
+}
